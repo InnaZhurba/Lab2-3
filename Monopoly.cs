@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Lab2_BoardGames
@@ -248,7 +249,7 @@ namespace Lab2_BoardGames
         int[] HowMuchMoney(Player player)
         {
             link1:
-            int[] array = new int[7] { 0,0,0,0,0,0,0};
+            int[] array = new int[7] { 0,0,0,0,0,0,0};   
             int num;
             string yes=null;
             do
@@ -318,6 +319,10 @@ namespace Lab2_BoardGames
         void GameIsOver()
         {
             Console.WriteLine("GAME IS OVER!!!");
+            Subject sub = new Subject(1);
+            ObserverMonopoly ob = new ObserverMonopoly();
+            sub.Attach(ob);
+            sub.SomeBusinessLogic();
         }
     }
 }

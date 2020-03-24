@@ -47,6 +47,7 @@
     <Compile Include="Mafia.cs" />
     <Compile Include="Monopoly.cs" />
     <Compile Include="BoardGame.cs" />
+    <Compile Include="Observer.cs" />
     <Compile Include="Rules.cs" />
     <Compile Include="UI.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

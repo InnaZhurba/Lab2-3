@@ -88,10 +88,20 @@ namespace Lab2_BoardGames
                 if ((mafiateam == 0) || (simpleteam == 0))
                     break;
             } while ((mafiateam!=0)||(simpleteam!=0));
+            Subject sub;
             if (simpleteam == 0)
+            {
                 Console.WriteLine("Mafia team is the winer!!!");
+                sub = new Subject(1);
+            }
             else
+            {
                 Console.WriteLine("Simple team is the winer!!!");
+                sub = new Subject(2);
+            }
+            ObserverMafia ob = new ObserverMafia();
+            sub.Attach(ob);
+            sub.SomeBusinessLogic();
         }
         void AddingPlayersToTeams(int[] MafiaTeam, int[] SimpleTeam)
         {
@@ -123,7 +133,7 @@ namespace Lab2_BoardGames
 
 
             } while (i != 0);
-            ShowTeamsMembers(MafiaTeam, SimpleTeam);
+            ShowTeamsMembers(MafiaTeam, SimpleTeam);            
         }
         void ShowTeamsMembers(int[] MafiaTeam, int[] SimpleTeam)
         {

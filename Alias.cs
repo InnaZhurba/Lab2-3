@@ -63,6 +63,10 @@ namespace Lab2_BoardGames
             {
                 Console.WriteLine("Team "+(i+1)+" has "+teams[i].NumOfCorrectAnswers+" correct answers with "+ teams[i].NumOfMembers+" members.");
             }
+            Subject sub = new Subject(1);
+            ObserverAlias ob = new ObserverAlias();
+            sub.Attach(ob);
+            sub.SomeBusinessLogic();
         }
         string WhoWin()
         {
@@ -72,6 +76,7 @@ namespace Lab2_BoardGames
                 return "Both Teams";
             else
                 return "Team 2";
+            
         }
         bool RandAnswer()
         {
